@@ -1,0 +1,29 @@
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+
+#splitting data in training and testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+
+#Initialising the Decision Tree Model
+clf = DecisionTreeClassifier()
+
+#Fitting the data into the model
+clf = clf.fit(X_train,y_train)
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression 
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import StandardScaler 
+
+sc = StandardScaler()
+
+x_train_2 = sc.fit_transform(x_train_2) 
+x_test_2 = sc.fit_transform(x_test_2) 
+
+model_2 = LogisticRegression(random_state = 0) 
+model_2.fit(x_train_2, y_train_2)
+
+y_pred_2 = model_2.predict(x_test_2)
+
+accuracy = accuracy_score(y_test_2, y_pred_2)
+print(accuracy)
